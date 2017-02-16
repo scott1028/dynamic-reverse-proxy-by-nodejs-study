@@ -1,5 +1,5 @@
 {
-  "name": "test-dynamic-rp",
+  "name": "local-crm-reverse-proxy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,9 @@
   "devDependencies": {
     "body-parser": "^1.16.1",
     "connect": "^3.5.1",
+    "forever": "^0.15.3",
     "http-proxy": "^1.16.2",
+    "pm2": "^2.4.0",
     "redbird": "^0.6.15",
     "sync-request": "^4.0.1"
   }

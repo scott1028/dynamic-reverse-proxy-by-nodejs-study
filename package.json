@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "body-parser": "^1.16.1",
+    "connect": "^3.5.1",
+    "http-proxy": "^1.16.2",
     "redbird": "^0.6.15",
     "sync-request": "^4.0.1"
   }

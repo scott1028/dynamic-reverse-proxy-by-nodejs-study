@@ -9,6 +9,7 @@ const http = require('http'),
 var proxy = httpProxy.createProxyServer({});
 proxy.on('proxyReq', function(proxyReq, req, res, options) {
     proxyReq.setHeader('X-Special-Proxy-Header', 'node-proxy');
+    proxyReq.setHeader('Host', req.host);
     
     // stuff from prev middleware.
     console.log('[Before proxyReq]', req.body, req.body.length);
@@ -25,7 +26,13 @@ var app = connect()
             var body = Buffer.concat(data);
             console.log('[Start proxyReq]', body, body.length);
             req.body = body;
-            req.proxyTarget = 'https://dev.test.com';
+            
+            // config target
+            req.prefix = '';
+            req.host = 'dev.test.com';
+            req.protocal = 'https://';
+            
+            req.proxyTarget = req.protocal + req.host + req.prefix;
             req.secure = false;
             next();
         });

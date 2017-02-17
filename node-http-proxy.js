@@ -11,7 +11,7 @@ proxy.on('proxyReq', function(proxyReq, req, res, options) {
     proxyReq.setHeader('X-Special-Proxy-Header', 'node-proxy');
     
     // 此行要根據你 Target 的 Server 設定而至，如果有多個 Virtual Host 就要考慮設定！
-    proxyReq.setHeader('Host', req.host);
+    // proxyReq.setHeader('Host', req.host);
     
     // stuff from prev middleware.
     console.log('[Before proxyReq]', req.body, req.body.length);

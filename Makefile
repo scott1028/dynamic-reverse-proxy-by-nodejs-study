@@ -3,7 +3,7 @@ timestamp=`date +"%Y%m%d%H%M%S"`
 lift:
 	./node_modules/forever/bin/forever app.js
 
-daemom:
+daemon:
 	./node_modules/pm2/bin/pm2 start node-http-proxy.js -i 4
 
 status:

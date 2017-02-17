@@ -1,9 +1,9 @@
 'use strict';
 
 const http = require('http'),
-    connect = require('connect'),
-    httpProxy = require('http-proxy'),
-    request = require('sync-request');
+      connect = require('connect'),
+      httpProxy = require('http-proxy'),
+      request = require('sync-request');
 
 
 var proxy = httpProxy.createProxyServer({});

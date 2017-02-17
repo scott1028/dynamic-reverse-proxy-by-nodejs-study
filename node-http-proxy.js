@@ -26,6 +26,10 @@ var app = connect()
         });
         req.on('end', function(){
             var body = Buffer.concat(data);
+            
+            // 可以用來判斷導向哪一個 Backend Server, ex: UI Server or API Server.
+            console.log('[Path]', req.url);
+            
             console.log('[Start proxyReq]', body, body.length);
             req.body = body;
             
